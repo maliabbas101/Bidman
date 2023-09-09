@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="">Log Out</a></p>
+{% else %}
+<div class="container">
+    {% load static %}
+
+    <img src="{% static 'images/home.jpg' %}" alt="My image">
+  </div>
+{% endif %}
+{% endblock %}
